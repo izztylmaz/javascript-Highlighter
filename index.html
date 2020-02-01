@@ -24,10 +24,8 @@
 			document.getElementById("highlight").onclick = function(){
 				var cV = document.getElementById("srch").value;
 				if(cV){
-					var myStr = document.getElementById("targetString").innerHTML;
-					myStr = myStr.replace(/<\/?span[^>]*>/g,"");
-					var arr = cV.split(",");
-					arr.forEach(function(searchingText){
+					myStr = document.getElementById("targetString").innerHTML.replace(/<\/?span[^>]*>/g,"");
+					cV.split(",").forEach(function(searchingText){
 						myStr = myStr.split(searchingText).join('<span>'+searchingText+'</span>')
 						document.getElementById("targetString").innerHTML = myStr;
 					});
